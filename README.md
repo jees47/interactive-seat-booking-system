@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Seat Booking App
 
-## Getting Started
+## Overview
+This is a **Next.js** application for booking seats for shows. Users can select up to 8 seats and book them. The app prevents users from selecting more than 8 seats and provides feedback messages using `window.alert`.
 
-First, run the development server:
+## Features
+- **Seat Selection**: Users can choose seats, which are visually highlighted when selected.
+- **Booking Limit**: A user can select a maximum of 8 seats.
+- **Error Handling**: If a user tries to select more than 8 seats, an alert message is shown.
+- **Booking Confirmation**: If no seats are selected, an alert notifies the user. Upon successful booking, another alert confirms the reservation.
+- **Reset Selection**: After booking, all selected seats are cleared.
+- **Responsive UI**: Styled using Tailwind CSS for a clean and responsive design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+- **Next.js**: Framework for React-based SSR and SSG.
+- **Redux Toolkit**: Manages the global state of selected seats.
+- **TypeScript**: Ensures type safety in the application.
+- **Tailwind CSS**: Provides a sleek and responsive UI.
+
+## Installation
+### Prerequisites
+Ensure you have **Node.js** installed (version 16 or later is recommended).
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/seat-booking-app.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd seat-booking-app
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+The app will be available at `http://localhost:3000/`.
+
+## Project Structure
+```
+seat-booking-app/
+│── public/                 # Static assets
+│── src/
+│   ├── components/         # Reusable components
+│   ├── pages/              # Next.js page components
+│   ├── store/              # Redux state management
+│   ├── styles/             # Global and component styles
+│── package.json            # Dependencies and scripts
+│── README.md               # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Redux Store Setup
+- **seatSlice.ts**: Manages the state of selected seats, ensuring a max limit of 8.
+- **RootState.ts**: Defines the root state structure for Redux.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Components
+### `Seat.tsx`
+Handles individual seat selection and prevents selecting more than 8 seats.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### `PriceDetails.tsx`
+Displays selected seats, total cost, and a "Book Now" button with validation.
 
-## Learn More
+## Usage Instructions
+1. Select seats (up to 8).
+2. Click "Book Now".
+3. Alerts will indicate success or errors.
+4. After booking, the selection resets.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`
+3. Make your changes and commit: `git commit -m "Added new feature"`
+4. Push to your branch: `git push origin feature-name`
+5. Open a Pull Request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact
+For questions or contributions, reach out to **Jeesmon Joy**.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
