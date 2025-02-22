@@ -1,18 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',  
   images: {
     domains: ["images.pexels.com"],
+    unoptimized: true, 
   },
-  theme: {
-    extend: {
-      colors: {
-        silver: '#C4C4C4',
-        gold: '#FFD700',
-        platinum: '#E5E4E2',
-      },
-    },
-  },
+  basePath: process.env.NODE_ENV === 'production' ? '/interactive-seat-booking-system' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/interactive-seat-booking-system/' : '',
 };
 
 export default nextConfig;

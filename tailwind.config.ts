@@ -11,6 +11,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        silver: '#C4C4C4',
+        gold: '#FFD700',
+        platinum: '#E5E4E2',
       },
     },
   },
